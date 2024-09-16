@@ -1,0 +1,17 @@
+{
+    "memoization": {
+      "react-memo": "Good",
+      "useMemo": "Moderate"
+    },
+    "state-management": {
+      "useState": "Good",
+      "useReducer": "Excellent",
+      "redux": "Fair",
+      "mobx": "Good"
+    },
+    "ssr-vs-csr": {
+      "ssr": "Faster initial load",
+      "csr": "Faster interactions"
+    }
+  }
+  

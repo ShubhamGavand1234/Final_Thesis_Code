@@ -1,0 +1,72 @@
+/* src/index.css */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+  }
+  
+  /* src/components/UploadForm.css */
+ .drag-drop-container {
+    border: 2px dashed #00cfff; /* Visible border color */
+    border-radius: 8px;
+    padding: 20px; /* Padding inside the container */
+    background-color: #1c1c1c; /* Background color */
+    text-align: center; /* Center text inside */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: background-color 0.3s ease, border-color 0.3s ease; /* Smooth transition for background and border color */
+  }
+  
+  .drag-drop-container.drag-active {
+    background-color: #292929; /* Background color when a file is dragged over */
+    border-color: #00ffcc; /* Border color when a file is dragged over */
+  }
+  
+  .drag-drop-container input {
+    display: none; /* Hide the default file input */
+  }
+  
+  
+  
+  button {
+    background: linear-gradient(45deg, #ff0081, #ff6d00);
+    border: none;
+    color: #fff;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background 0.3s ease;
+  }
+  
+  button:hover {
+    background: linear-gradient(45deg, #ff6d00, #ff0081);
+  }
+  
+  .container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+    border-radius: 10px;
+    background: #1c1c1c;
+    box-shadow: 0 0 20px rgba(0, 255, 255, 0.5);
+  }
+  
+  .results {
+    background: #292929;
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 255, 255, 0.3);
+  }
+  
+  .results pre {
+    color: #00ffcc;
+    font-size: 16px;
+    white-space: pre-wrap;
+  }
+  

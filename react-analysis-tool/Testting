@@ -1,0 +1,57 @@
+interface AnalysisResults {
+    memoization?: {
+      'react-memo'?: string;
+      'useMemo'?: string;
+    };
+    'state-management'?: {
+      useState?: string;
+      useReducer?: string;
+      redux?: string;
+      mobx?: string;
+    };
+    'ssr-vs-csr'?: {
+      ssr?: string;
+      csr?: string;
+    };
+  }
+  
+  export const analyzeFiles = (files: { [filename: string]: string }): AnalysisResults => {
+    const results: AnalysisResults = {};
+  
+    if (files['src/components/App.tsx']) {
+      const appContent = files['src/components/App.tsx'];
+      if (appContent.includes('React.memo')) {
+        results.memoization = { 'react-memo': 'Good' };
+      }
+      if (appContent.includes('useMemo')) {
+        results.memoization = { ...results.memoization, useMemo: 'Moderate' };
+      }
+    }
+  
+    if (files['src/index.tsx']) {
+      const indexContent = files['src/index.tsx'];
+      if (indexContent.includes('useState')) {
+        results['state-management'] = { useState: 'Good' };
+      }
+      if (indexContent.includes('useReducer')) {
+        results['state-management'] = { ...results['state-management'], useReducer: 'Excellent' };
+      }
+      if (indexContent.includes('redux')) {
+        results['state-management'] = { ...results['state-management'], redux: 'Fair' };
+      }
+      if (indexContent.includes('mobx')) {
+        results['state-management'] = { ...results['state-management'], mobx: 'Good' };
+      }
+    }
+  //my code
+  console.log(results);
+  
+  //my code
+    results['ssr-vs-csr'] = {
+      ssr: 'Faster initial load',
+      csr: 'Faster interactions'
+    };
+  
+    return results;
+  };
+  
